@@ -312,6 +312,9 @@ const Home = () => {
                   <Link to="/experience" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Behind The Scenes</Link>
                   <Link to="/experience" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Experimental Lab</Link>
                 </div>
+                
+                {/* Bottom Accent Line */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A24D]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
             </div>
           </div>
