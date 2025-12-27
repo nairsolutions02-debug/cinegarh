@@ -167,57 +167,150 @@ const Home = () => {
             <p className="text-white/60 tracking-[0.2em] uppercase">Three Pillars of Storytelling</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-1">
             {/* Pillar 1: Originals */}
-            <div className={`group relative overflow-hidden rounded-lg transition-all duration-1000 delay-100 ${visibleSections.pillars ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B1C2D]/50 to-[#0B1C2D]"></div>
-              <div className="absolute top-4 right-4 text-8xl font-bold text-white/5">01</div>
-              <div className="relative p-8 h-full min-h-[400px] flex flex-col justify-end border border-white/10 rounded-lg hover:border-[#C9A24D]/30 transition-colors duration-500">
-                <Film className="w-12 h-12 text-[#C9A24D] mb-6" />
-                <h3 className="text-2xl font-light text-white mb-4">ORIGINALS</h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-6">
+            <div className={`group relative overflow-hidden transition-all duration-1000 delay-100 cursor-pointer ${visibleSections.pillars ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80" 
+                  alt="Cinema"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[#0B1C2D]/80 group-hover:bg-[#0B1C2D]/70 transition-all duration-700"></div>
+              </div>
+              
+              {/* Large Background Number */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span className="text-[180px] md:text-[220px] font-bold text-white/[0.03] group-hover:text-white/[0.08] transition-all duration-700 select-none">01</span>
+              </div>
+              
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#C9A24D]/20 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[#C9A24D]/30 rounded-full blur-3xl"></div>
+              </div>
+              
+              {/* Content */}
+              <div className="relative p-8 md:p-10 h-full min-h-[500px] flex flex-col items-center justify-center text-center">
+                {/* Icon */}
+                <div className="mb-8 transform group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 border border-white/30 group-hover:border-[#C9A24D]/50 rounded-lg flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(201,162,77,0.3)]">
+                    <Film className="w-8 h-8 text-white/80 group-hover:text-[#C9A24D] transition-colors duration-500" />
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-light text-white mb-4 tracking-wider">ORIGINALS</h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-xs">
                   Immersive narrative worlds crafted for the screen. Stories that linger long after the credits roll.
                 </p>
-                <div className="space-y-2">
-                  <Link to="/originals" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Feature Films</Link>
-                  <Link to="/originals" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Original Series</Link>
-                  <Link to="/originals" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Short Films</Link>
+                
+                {/* Sub-links */}
+                <div className="space-y-3">
+                  <Link to="/originals" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Feature Films</Link>
+                  <Link to="/originals" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Original Series</Link>
+                  <Link to="/originals" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Short Films</Link>
                 </div>
+                
+                {/* Bottom Accent Line */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A24D]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
             </div>
 
             {/* Pillar 2: Records */}
-            <div className={`group relative overflow-hidden rounded-lg transition-all duration-1000 delay-200 ${visibleSections.pillars ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B1C2D]/50 to-[#0B1C2D]"></div>
-              <div className="absolute top-4 right-4 text-8xl font-bold text-white/5">02</div>
-              <div className="relative p-8 h-full min-h-[400px] flex flex-col justify-end border border-white/10 rounded-lg hover:border-[#C9A24D]/30 transition-colors duration-500">
-                <Music className="w-12 h-12 text-[#C9A24D] mb-6" />
-                <h3 className="text-2xl font-light text-white mb-4">RECORDS</h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-6">
+            <div className={`group relative overflow-hidden transition-all duration-1000 delay-200 cursor-pointer ${visibleSections.pillars ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80" 
+                  alt="Music"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[#0B1C2D]/80 group-hover:bg-[#0B1C2D]/70 transition-all duration-700"></div>
+              </div>
+              
+              {/* Large Background Number */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span className="text-[180px] md:text-[220px] font-bold text-white/[0.03] group-hover:text-white/[0.08] transition-all duration-700 select-none">02</span>
+              </div>
+              
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#C9A24D]/20 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[#C9A24D]/30 rounded-full blur-3xl"></div>
+              </div>
+              
+              {/* Content */}
+              <div className="relative p-8 md:p-10 h-full min-h-[500px] flex flex-col items-center justify-center text-center">
+                {/* Icon - Vinyl Record Style */}
+                <div className="mb-8 transform group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 border border-white/30 group-hover:border-[#C9A24D]/50 rounded-full flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(201,162,77,0.3)] group-hover:rotate-180">
+                    <div className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center">
+                      <div className="w-4 h-4 bg-white/30 group-hover:bg-[#C9A24D]/50 rounded-full transition-colors duration-500"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-light text-white mb-4 tracking-wider">RECORDS</h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-xs">
                   A sonic dimension where music transcends background noise and becomes a character itself.
                 </p>
-                <div className="space-y-2">
-                  <Link to="/records" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Film Scores</Link>
-                  <Link to="/records" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Artist Label</Link>
-                  <Link to="/records" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Vinyl Editions</Link>
+                
+                {/* Sub-links */}
+                <div className="space-y-3">
+                  <Link to="/records" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Film Scores</Link>
+                  <Link to="/records" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Artist Label</Link>
+                  <Link to="/records" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Vinyl Editions</Link>
                 </div>
+                
+                {/* Bottom Accent Line */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A24D]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
             </div>
 
             {/* Pillar 3: Experience */}
-            <div className={`group relative overflow-hidden rounded-lg transition-all duration-1000 delay-300 ${visibleSections.pillars ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B1C2D]/50 to-[#0B1C2D]"></div>
-              <div className="absolute top-4 right-4 text-8xl font-bold text-white/5">03</div>
-              <div className="relative p-8 h-full min-h-[400px] flex flex-col justify-end border border-white/10 rounded-lg hover:border-[#C9A24D]/30 transition-colors duration-500">
-                <Sparkles className="w-12 h-12 text-[#C9A24D] mb-6" />
-                <h3 className="text-2xl font-light text-white mb-4">EXPERIENCE</h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-6">
+            <div className={`group relative overflow-hidden transition-all duration-1000 delay-300 cursor-pointer ${visibleSections.pillars ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1626379953822-baec19c3accd?w=800&q=80" 
+                  alt="VR Experience"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[#0B1C2D]/80 group-hover:bg-[#0B1C2D]/70 transition-all duration-700"></div>
+              </div>
+              
+              {/* Large Background Number */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span className="text-[180px] md:text-[220px] font-bold text-white/[0.03] group-hover:text-white/[0.08] transition-all duration-700 select-none">03</span>
+              </div>
+              
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#C9A24D]/20 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[#C9A24D]/30 rounded-full blur-3xl"></div>
+              </div>
+              
+              {/* Content */}
+              <div className="relative p-8 md:p-10 h-full min-h-[500px] flex flex-col items-center justify-center text-center">
+                {/* Icon - VR Headset Style */}
+                <div className="mb-8 transform group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-10 border border-white/30 group-hover:border-[#C9A24D]/50 rounded-lg flex items-center justify-center gap-2 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(201,162,77,0.3)]">
+                    <div className="w-5 h-5 border border-white/40 rounded group-hover:border-[#C9A24D]/60 transition-colors duration-500"></div>
+                    <div className="w-5 h-5 border border-white/40 rounded group-hover:border-[#C9A24D]/60 transition-colors duration-500"></div>
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-light text-white mb-4 tracking-wider">EXPERIENCE</h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-xs">
                   Breaking the fourth wall through digital immersion, galleries, and interactive narrative experiments.
                 </p>
-                <div className="space-y-2">
-                  <Link to="/experience" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Digital Galleries</Link>
-                  <Link to="/experience" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Behind The Scenes</Link>
-                  <Link to="/experience" className="block text-xs tracking-[0.2em] uppercase text-white/40 hover:text-[#C9A24D] transition-colors duration-300">Experimental Lab</Link>
+                
+                {/* Sub-links */}
+                <div className="space-y-3">
+                  <Link to="/experience" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Digital Galleries</Link>
+                  <Link to="/experience" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Behind The Scenes</Link>
+                  <Link to="/experience" className="block text-xs tracking-[0.3em] uppercase text-white/40 hover:text-[#C9A24D] transition-all duration-300 hover:tracking-[0.4em]">Experimental Lab</Link>
                 </div>
               </div>
             </div>
